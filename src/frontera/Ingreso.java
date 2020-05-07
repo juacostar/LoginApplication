@@ -5,6 +5,9 @@
  */
 package frontera;
 
+import Control.ValidarLogin;
+import Entidad.*;
+
 /**
  *
  * @author ADMIN
@@ -37,7 +40,18 @@ public class Ingreso extends javax.swing.JPanel {
 
         jLabel2.setText("Contraseña");
 
+        contraseniaTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contraseniaTFActionPerformed(evt);
+            }
+        });
+
         aceptarB.setText("Aceptar");
+        aceptarB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aceptarBActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -73,6 +87,24 @@ public class Ingreso extends javax.swing.JPanel {
                 .addGap(20, 20, 20))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
+        Usuario usuario=new Usuario();        // TODO add your handling code here:
+        usuario.setNombre(nombreTF.getText());
+        usuario.setPassword(contraseniaTF.getText());
+        System.out.println(usuario.getNombre());
+        System.out.println(usuario.getPassword());
+        ValidarLogin validar= new ValidarLogin();
+        
+        System.out.println("------------");
+        String resultado= validar.verificarLogin(usuario);
+        System.out.println(resultado);
+        
+    }//GEN-LAST:event_aceptarBActionPerformed
+
+    private void contraseniaTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseniaTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contraseniaTFActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
