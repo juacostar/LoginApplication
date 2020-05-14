@@ -55,13 +55,13 @@ public class UsuarioDao {
     public Usuario leer(Usuario par){
         EntityManager em= emf.createEntityManager();
         Usuario usuario=null;
-        Query q = em.createQuery("SELECT u FROM Usuario u"+
+        Query q = em.createQuery("SELECT u FROM Usuario u "+
                             "WHERE u.nombre LIKE :nombre"+
-                            "AND u.password LIKE :password")
+                            " AND u.password LIKE :password")
                             .setParameter("nombre", par.getNombre())
                             .setParameter("password", par.getPassword());
         try{
-            usuario= (Usuario)q.getSingleResult();
+            usuario= (Usuario) q.getSingleResult();
         }catch(NonUniqueResultException e){
             usuario=(Usuario)q.getResultList().get(0);
         }catch(Exception e){

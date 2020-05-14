@@ -25,6 +25,7 @@ public class Inicializacion {
         Usuario a= new Usuario();
         Usuario b= new Usuario();
         Usuario c= new Usuario();
+        Usuario d= new Usuario();
         
         a.setNombre("Juan");
         a.setPassword("1234");
@@ -32,10 +33,13 @@ public class Inicializacion {
         b.setPassword("123");
         c.setNombre("maria");
         c.setPassword("12345");
+        d.setNombre("Henry");
+        d.setPassword("1234");
         
         usuarios.add(a);
         usuarios.add(b);
         usuarios.add(c);
+        usuarios.add(d);
         
         //sistema.setUsuarios(usuarios);
         
